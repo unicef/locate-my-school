@@ -1,4 +1,4 @@
-# geolocate-my-school
+# Locate My School - English version
 
 One-page website utility that records the GPS location of the website visitor. It uses the following components:
 
