@@ -24,11 +24,11 @@
     </style>
   </head>
   <body class="text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
 
-      <header class="masthead mb-auto">
+      <header class="masthead mb-auto p-3">
         <div class="inner">
-          <h3 class="masthead-brand">Locate My School</h3>
+          <h3 class="masthead-brand" style="font-weight:400">Locate My School</h3>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="#">English</a>
             <a class="nav-link" href="https://trouvemonecole.org">Français</a>
@@ -40,7 +40,7 @@
       <main role="main" class="inner cover">
         <p class="lead">This site helps you locate your school, and submit your school location to UNICEF Project Connect.</p>
         <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary" id="start">Click to Start</a>
+          <a href="#" class="btn btn-lg blue" id="start">Click to Start</a>
         </p>
 
         <p id = "status"></p>
@@ -78,13 +78,18 @@
           </div>
           <input type="hidden" id="lat" name="lat" value="">
           <input type="hidden" id="lng" name="lng" value="">
-          <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+          <button type="submit" id="submit-btn" class="btn blue">Submit</button>
         </form>
       </main>
 
-      <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>Learn more at <a href="https://www.projectconnect.world/" target="_blank">Project Connect</a>.</p>
+      <footer class="mastfoot mt-auto blue container">
+      <div class="row">
+		<div class="col-6 text-left" style="padding-top: 0.5em">
+			<img src="img/unicef-logo.png">
+		</div>
+		<div class="col-6 text-right smallscreen" style="padding-top: 0.5em">
+			<p>Learn more at <a href="https://www.projectconnect.world/" target="_blank" style="color:#FFF; text-decoration:underline">Project&nbsp;Connect</a>.</p>
+		</div>
       </div>
       </footer>
     </div>
