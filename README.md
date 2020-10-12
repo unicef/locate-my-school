@@ -12,6 +12,17 @@ Just place the two files `index.html` and `cover.css` in any folder of a webserv
 
 Alternatively, clone this repository on GitHub, and use [GitHub Pages](https://pages.github.com/) to host your website.
 
+## Configuration
+
+The submissions are routed to different spreadsheets depending on where the point is located using [geolib](https://www.npmjs.com/package/geolib).
+
+To add a new country, follow these steps:
+- Create a copy of one of the existing spreadsheets, and follow the configuration from [jamiewilson/form-to-google-sheets](https://github.com/jamiewilson/form-to-google-sheets) to set it up
+- From this raw file containing the geoJSON polygon definitions by country, find your country and copy the `coordinates` field
+- Paste the above coordinates array into [country-polygons.js](country-polygons.js) mirroring the existing entries
+- Edit the code in [index.js](index.js) around L160 to do the actual matching of the gps coords against the country polygon.
+
+
 ## Screenshots
 
 ![Landing Page](docs/landing.png "Landing Page")
