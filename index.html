@@ -103,6 +103,9 @@
       </footer>
     </div>
 
+    <script src="country-polygons.js"></script>
+    <script src="geolib.js"></script>
+
     <script>
 
       const status = document.querySelector('#status');
@@ -146,11 +149,19 @@
 
       document.querySelector('#start').addEventListener('click', geoFindMe);
 
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbxsnPBB8wLT14Dy81gTSViWIaHId-ALZMYt58l9XeA8yA51tJFT/exec'
       const form = document.forms['submit-form']
 
       form.addEventListener('submit', e => {
         e.preventDefault()
+
+        let scriptURL;
+        if(window.geolib.isPointInPolygon({latitude: lat.value , longitude: lng.value}, countries['NER'])){
+          scriptURL = 'https://script.google.com/macros/s/AKfycbxsnPBB8wLT14Dy81gTSViWIaHId-ALZMYt58l9XeA8yA51tJFT/exec'; 
+        } else if (window.geolib.isPointInPolygon({latitude: lat.value , longitude: lng.value}, countries['KEN'])){
+          scriptURL = 'https://script.google.com/macros/s/AKfycbxGjGnW3HV5mqMtIreDVOKWGTkugWk2Tm0ubHCLIw/exec'
+        } else {
+          scriptURL = 'https://script.google.com/macros/s/AKfycbw0WPc6s9beAT4vASwpgwrHBxS5w56xhq7fsmNa/exec'
+        }
 
         submitForm.style.display = 'none';
         mapLink.innerHTML = '';
